@@ -30,7 +30,6 @@ app.post('/login',(req,res)=>{
 })
 
 app.get('/profile',authenticateToken(['admin','user']),(req,res)=>{
-    console.log("reached")
     return res.status(200).json(feed.filter(post=>post.role===req.user.role))
 })
 
